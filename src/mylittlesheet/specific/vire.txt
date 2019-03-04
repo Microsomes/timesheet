@@ -1,0 +1,34 @@
+
+                                    if(afternooClockout.length>=1){
+                                        //this person checked out in the afternoon
+
+                                        //only the first block needs to be calculated since they never came back after lunnch
+                                        
+
+ 
+
+
+                                        //check if the person came back if not then calculate the total hours from the first sector only
+                                        if(afternoonClockIn.length>=1){
+                                            //a lunch break was taken and the person has come back
+
+                                            //calculate lunch taken
+                                            var lunchout= afternooClockout;
+                                            var lunchin=afternoonClockIn;
+                                            var diff=calculateDifference(lunchout,lunchin);
+
+                                            resolutionCrunch.push({
+                                                monthIndex:cur.monthIndex,
+                                                lunchTaken:diff
+                                            })
+                                           console.log(resolutionCrunch);
+ 
+                                        }else{
+                                            //no lunch break was taken instead they left and never came back after lunch
+
+                                        }
+
+
+                                    }else{
+                                        //this person did not checkout in the afternoon therefore we need to check when the exited to get the total hours
+                                    }
